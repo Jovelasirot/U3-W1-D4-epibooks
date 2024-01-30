@@ -6,14 +6,15 @@ import Row from "react-bootstrap/Row";
 import data from "../data/fantasy.json";
 
 const CustomCard = ({ titlePart }) => (
-  <Container className="z-0">
+  <Container>
     <h1>{titlePart}</h1>
     <Row
-      className="justify-content-center mt-3 g-3"
+      className="justify-content-center mt-3 g-3 mx-3 mx-md-0"
       xs={1}
-      md={3}
-      lg={4}
-      xl={5}
+      md={2}
+      lg={3}
+      xl={4}
+      xxl={5}
     >
       {data.map((books) => {
         return (
