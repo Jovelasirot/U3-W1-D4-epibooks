@@ -49,3 +49,7 @@
   background: #9b3548;
   border-radius: 20px;
 }
+
+.placeHolder::placeholder {
+  color: #fff !important;
+}

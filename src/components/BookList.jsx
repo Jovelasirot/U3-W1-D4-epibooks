@@ -24,9 +24,9 @@ const BookList = ({ allFantasy }) => {
           <Row>
             <Col xs="auto">
               <Form.Control
-                className="bg-dark text-light border border-light  "
+                className="bg-dark text-light border border-light  placeHolder"
                 type="text"
-                placeholder="Search book"
+                placeholder="Find a book"
                 value={searchTerm}
                 onChange={handleSearchChange}
               />
