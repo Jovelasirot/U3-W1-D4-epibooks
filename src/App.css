@@ -15,11 +15,7 @@
 
 .App-header {
   background: rgb(0, 217, 217);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 217, 217, 1) 0%,
-    rgba(255, 39, 80, 1) 100%
-  );
+  background: linear-gradient(0deg, #00d9d9 0%, #ff2750 100%);
   min-height: 100vh;
   padding-bottom: 20px;
 }
@@ -40,4 +36,16 @@
 .listBooks {
   height: 700px;
   overflow: auto;
+}
+.listBooks::-webkit-scrollbar {
+  width: 10px;
+}
+
+.listBooks::-webkit-scrollbar-thumb {
+  background: #00d9d9;
+  border-radius: 20px;
+}
+.listBooks::-webkit-scrollbar-track {
+  background: #9b3548;
+  border-radius: 20px;
 }
