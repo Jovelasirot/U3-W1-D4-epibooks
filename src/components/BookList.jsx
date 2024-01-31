@@ -24,6 +24,7 @@ const BookList = ({ allFantasy }) => {
           <Row>
             <Col xs="auto">
               <Form.Control
+                className="bg-dark text-light border border-light  "
                 type="text"
                 placeholder="Search book"
                 value={searchTerm}
