@@ -13,7 +13,7 @@ const MyFooter = () => (
           <p>Epibooks 2024</p>
         </Col>
         <Col>
-          <p>Image curated by Epicode</p>
+          <p>Images curated by Epicode</p>
         </Col>
         <Col>
           <p>Made by Jovel</p>
