@@ -37,11 +37,17 @@ const BookList = ({ allFantasy }) => {
       <Row>
         <Col className="listBooks">
           <ListGroup>
-            {filteredBooks.map((book) => (
-              <ListGroup.Item key={book.asin} className="bg-dark text-light">
-                {book.title}
+            {filteredBooks.length === 0 ? (
+              <ListGroup.Item className="bg-dark text-danger">
+                Book not found
               </ListGroup.Item>
-            ))}
+            ) : (
+              filteredBooks.map((book) => (
+                <ListGroup.Item key={book.asin} className="bg-dark text-light">
+                  {book.title}
+                </ListGroup.Item>
+              ))
+            )}
           </ListGroup>
         </Col>
       </Row>
