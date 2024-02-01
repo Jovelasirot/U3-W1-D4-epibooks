@@ -8,8 +8,7 @@ import SingleBook from "./components/SingleBook";
 import fantasyData from "./data/fantasy.json";
 import BookList from "./components/BookList";
 
-let randomIndex = Math.floor(Math.random() * fantasyData.length);
-const oneBook = fantasyData[randomIndex];
+const oneBook = fantasyData[Math.floor(Math.random() * fantasyData.length)];
 
 function App() {
   return (

@@ -37,19 +37,22 @@
   height: 700px;
   overflow: auto;
 }
-.listBooks::-webkit-scrollbar {
-  width: 10px;
-}
 
-.listBooks::-webkit-scrollbar-thumb {
-  background: #00d9d9;
-  border-radius: 20px;
-}
-.listBooks::-webkit-scrollbar-track {
-  background: #9b3548;
-  border-radius: 20px;
+@media screen and (min-width: 1024px) {
+  .listBooks::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .listBooks::-webkit-scrollbar-thumb {
+    background: #00d9d9;
+    border-radius: 20px;
+  }
+  .listBooks::-webkit-scrollbar-track {
+    background: #9b3548;
+    border-radius: 20px;
+  }
 }
 
 .placeHolder::placeholder {
-  color: #fff !important;
+  color: #868585 !important;
 }

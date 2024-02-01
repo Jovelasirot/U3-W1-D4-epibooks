@@ -6,14 +6,14 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 
 const BookList = ({ allFantasy }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [inputBook, setBook] = useState("");
 
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
+  const handleSearch = (e) => {
+    setBook(e.target.value);
   };
 
   const filteredBooks = allFantasy.filter((book) =>
-    book.title.toLowerCase().includes(searchTerm.toLowerCase())
+    book.title.toLowerCase().includes(inputBook.toLowerCase())
   );
 
   return (
@@ -27,8 +27,8 @@ const BookList = ({ allFantasy }) => {
                 className="bg-dark text-light border border-light  placeHolder"
                 type="text"
                 placeholder="Find a book"
-                value={searchTerm}
-                onChange={handleSearchChange}
+                value={inputBook}
+                onChange={handleSearch}
               />
             </Col>
           </Row>
