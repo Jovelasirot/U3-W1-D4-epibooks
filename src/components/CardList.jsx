@@ -1,7 +1,7 @@
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import SingleBook from "./SingleBook";
-import React, { Component } from "react";
+import { Component } from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -20,10 +20,10 @@ class BookList extends Component {
 
     return (
       <>
-        <Container className="pt-4">
-          <Form>
-            <Row className="justify-content-end">
-              <Col xs="auto">
+        <Container className="pt-4 ">
+          <Row className="justify-content-end">
+            <Col xs="auto">
+              <Form>
                 <Form.Control
                   className="bg-dark text-light border border-light  placeHolder"
                   type="text"
@@ -33,25 +33,24 @@ class BookList extends Component {
                     this.setState({ searchValue: e.target.value });
                   }}
                 />
-              </Col>
-            </Row>
-          </Form>
-          <h1>{this.props.partTittle}</h1>
-        </Container>
-        <Container>
+              </Form>
+            </Col>
+          </Row>
+          <h1 className="ms-2">{this.props.partTittle}</h1>
+
           <Row className="justify-content-center mt-3 g-3 mx-3 mx-md-0 ">
             {filteredBooks.length === 0 ? (
               <Col xs={12}>
                 <ListGroup>
                   <ListGroup.Item className="bg-dark text-danger">
-                    Book not found
+                    Book not found &#40;˚ ˃̣̣̥⌓˂̣̣̥ &#41;
                   </ListGroup.Item>
                 </ListGroup>
               </Col>
             ) : (
               filteredBooks.map((book) => (
-                <Col xs={12} md={6} lg={4} xl={3} xxl={3} key={book.asin}>
-                  <SingleBook oneBook={book} />
+                <Col xs={12} md={6} lg={4} xl={3} key={book.asin}>
+                  <SingleBook dataBooks={book} />
                 </Col>
               ))
             )}

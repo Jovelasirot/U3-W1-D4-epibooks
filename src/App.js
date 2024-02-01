@@ -6,18 +6,22 @@ import Welcome from "./components/Welcome";
 import fantasyData from "./data/fantasy.json";
 import CardList from "./components/CardList";
 
-// const oneBook = fantasyData[Math.floor(Math.random() * fantasyData.length)];
-
 function App() {
   return (
     <>
-      <header>
-        <CustomNavbar />
-      </header>
-      <main className="App-header">
-        <Welcome />
-        <CardList allFantasy={fantasyData} partTittle="Fantasy" />
-      </main>
+      <div className="App-header">
+        <header>
+          <CustomNavbar />
+        </header>
+        <main>
+          <Welcome />
+          <CardList
+            allFantasy={fantasyData}
+            partTittle={fantasyData[0].category.toUpperCase()}
+          />
+        </main>
+      </div>
+
       <footer>
         <MyFooter />
       </footer>
