@@ -1,14 +1,12 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomNavbar from "./components/CustomNavbar";
-import CustomCard from "./components/CustomCard";
 import MyFooter from "./components/MyFooter";
 import Welcome from "./components/Welcome";
-import SingleBook from "./components/SingleBook";
 import fantasyData from "./data/fantasy.json";
-import BookList from "./components/BookList";
+import CardList from "./components/CardList";
 
-const oneBook = fantasyData[Math.floor(Math.random() * fantasyData.length)];
+// const oneBook = fantasyData[Math.floor(Math.random() * fantasyData.length)];
 
 function App() {
   return (
@@ -18,9 +16,7 @@ function App() {
       </header>
       <main className="App-header">
         <Welcome />
-        <SingleBook singleBook={oneBook} bookCategory="Fantasy" />
-        <BookList allFantasy={fantasyData} />
-        <CustomCard titlePart="Fantasy Books" />
+        <CardList allFantasy={fantasyData} />
       </main>
       <footer>
         <MyFooter />
