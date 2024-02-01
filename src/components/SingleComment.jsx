@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const SingleComment = ({ comment }) => {
   const handleDelete = () => {
@@ -28,7 +29,7 @@ const SingleComment = ({ comment }) => {
       <div>{comment.comment}</div>
       <div>{comment.rate} stars</div>
       <Button variant="danger" className="btn-sm " onClick={handleDelete}>
-        delete
+        <i className="bi bi-trash-fill"></i>
       </Button>
     </div>
   );
