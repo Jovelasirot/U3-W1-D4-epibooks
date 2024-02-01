@@ -49,8 +49,8 @@ class CommentArea extends Component {
       <Container className="z-2">
         <Row>
           <Col>
+            <h5 className="text-end">Comments</h5>
             <ListGroup>
-              <h2>Comments</h2>
               <CommentsList comments={this.state.comments} />
               <AddComment bookId={this.props.bookId} />
             </ListGroup>

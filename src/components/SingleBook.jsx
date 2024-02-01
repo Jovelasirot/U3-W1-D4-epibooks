@@ -28,11 +28,11 @@ class SingleBook extends Component {
             <Card.Title className="flex-grow-1  fw-semibold">
               {this.props.dataBooks.title}
             </Card.Title>
-            <Container>
+            <div>
               {this.state.selected && (
                 <CommentArea bookId={this.props.dataBooks.asin} />
               )}
-            </Container>
+            </div>
             <Card.Text className="text-end">
               {this.props.dataBooks.price} $
             </Card.Text>
