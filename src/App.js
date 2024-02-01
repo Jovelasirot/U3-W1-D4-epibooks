@@ -16,7 +16,7 @@ function App() {
       </header>
       <main className="App-header">
         <Welcome />
-        <CardList allFantasy={fantasyData} />
+        <CardList allFantasy={fantasyData} partTittle="Fantasy" />
       </main>
       <footer>
         <MyFooter />
