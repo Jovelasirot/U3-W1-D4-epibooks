@@ -14,14 +14,13 @@ class BookList extends Component {
   render() {
     const filteredBooks = this.props.allFantasy.filter((book) =>
       book.title
-        .trim()
         .toLowerCase()
-        .includes(this.state.searchValue.toLowerCase())
+        .includes(this.state.searchValue.toLowerCase().trim())
     );
 
     return (
       <>
-        <Container className="py-4">
+        <Container className="pt-4">
           <Form>
             <Row className="justify-content-end">
               <Col xs="auto">
@@ -37,6 +36,7 @@ class BookList extends Component {
               </Col>
             </Row>
           </Form>
+          <h1>{this.props.partTittle}</h1>
         </Container>
         <Container>
           <Row className="justify-content-center mt-3 g-3 mx-3 mx-md-0 ">
@@ -50,15 +50,7 @@ class BookList extends Component {
               </Col>
             ) : (
               filteredBooks.map((book) => (
-                <Col
-                  xs={12}
-                  md={6}
-                  lg={4}
-                  xl={3}
-                  xxl={3}
-                  key={book.asin}
-                  className="listBooks"
-                >
+                <Col xs={12} md={6} lg={4} xl={3} xxl={3} key={book.asin}>
                   <SingleBook oneBook={book} />
                 </Col>
               ))
