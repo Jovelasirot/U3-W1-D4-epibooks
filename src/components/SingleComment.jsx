@@ -27,10 +27,12 @@ const SingleComment = ({ comment }) => {
   return (
     <div className="bg-warning d-flex justify-content-between border border-1 border-dark">
       <div>{comment.comment}</div>
-      <div>{comment.rate} stars</div>
-      <Button variant="danger" className="btn-sm " onClick={handleDelete}>
-        <i className="bi bi-trash-fill"></i>
-      </Button>
+      <div className="d-flex">
+        <div>{comment.rate} stars</div>
+        <Button variant="danger" className="btn-sm ms-2" onClick={handleDelete}>
+          <i className="bi bi-trash-fill"></i>
+        </Button>
+      </div>
     </div>
   );
 };
