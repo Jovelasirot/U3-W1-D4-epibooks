@@ -34,7 +34,7 @@
 }
 
 .listBooks {
-  height: 700px;
+  height: 80vh;
   overflow: auto;
 }
 

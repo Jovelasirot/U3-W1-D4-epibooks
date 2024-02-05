@@ -1,12 +1,10 @@
+import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import React, { Component } from "react";
-import CommentArea from "./CommentArea";
-import { Container } from "react-bootstrap";
 
 class SingleBook extends Component {
   state = {
-    selected: false,
+    cardSelected: false,
   };
 
   render() {
@@ -14,7 +12,7 @@ class SingleBook extends Component {
       <>
         <Card
           className={
-            this.state.selected
+            this.props.selected
               ? "bordered border-warning h-100 bg-dark text-light z-0"
               : "h-100 bg-dark text-light z-0"
           }
@@ -28,25 +26,21 @@ class SingleBook extends Component {
             <Card.Title className="flex-grow-1  fw-semibold">
               {this.props.dataBooks.title}
             </Card.Title>
-            <div>
-              {this.state.selected && (
-                <CommentArea bookId={this.props.dataBooks.asin} />
-              )}
-            </div>
             <Card.Text className="text-end">
               {this.props.dataBooks.price} $
             </Card.Text>
 
             <div className="d-flex justify-content-between ">
               <Button
-                variant={this.state.selected ? "warning" : "success"}
+                variant={this.state.cardSelected ? "warning" : "success"}
                 onClick={() => {
-                  this.setState({
-                    selected: !this.state.selected,
-                  });
+                  this.setState({ cardSelected: !this.state.cardSelected });
+                  this.props.handleSelected(
+                    this.state.cardSelected ? undefined : this.props.dataBooks
+                  );
                 }}
               >
-                {this.state.selected ? "Hide Reviews" : "Show Reviews"}
+                {this.state.cardSelected ? "Hide Reviews" : "Show Reviews"}
               </Button>
               <Button variant="secondary">Buy Now</Button>
             </div>

@@ -4,7 +4,7 @@ import CustomNavbar from "./components/CustomNavbar";
 import MyFooter from "./components/MyFooter";
 import Welcome from "./components/Welcome";
 import fantasyData from "./data/fantasy.json";
-import CardList from "./components/CardList";
+import BookList from "./components/BookList";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         </header>
         <main>
           <Welcome />
-          <CardList
+          <BookList
             allFantasy={fantasyData}
             partTittle={fantasyData[0].category.toUpperCase()}
           />

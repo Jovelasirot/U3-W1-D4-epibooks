@@ -8,7 +8,6 @@ class AddComment extends Component {
       comment: "",
       rate: "1",
       elementId: this.props.bookId,
-      author: "joe@gigi.com",
     },
   };
 
@@ -18,8 +17,7 @@ class AddComment extends Component {
     fetch("https://striveschool-api.herokuapp.com/api/comments/", {
       headers: {
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFhMmU2MzE4N2U1YzAwMTgxNGM1ZjAiLCJpYXQiOjE3MDU2NTE4MTEsImV4cCI6MTcwNjg2MTQxMX0.MukAz4w7SSYtD1Jp_m3qP72gpThtgJ7mQZy-6TUbW34",
-        "content-Type": "application/json",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWMwZTg5ZGUwODVmYTAwMTk2MzFhNWYiLCJpYXQiOjE3MDcxNDM0MjYsImV4cCI6MTcwODM1MzAyNn0.Jw7gWP0H0XxT73-fwPubkwbjBtXiJhtxpPYJKbmEydM",
       },
       method: "POST",
       body: JSON.stringify(this.state.commentLayout),
@@ -59,7 +57,7 @@ class AddComment extends Component {
           </Form.Select>
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Write your opinion here</Form.Label>
+          <Form.Label>Write your opinion here:</Form.Label>
           <Form.Control
             value={this.state.commentLayout.comment}
             required
@@ -73,9 +71,11 @@ class AddComment extends Component {
             }}
           />
         </Form.Group>
-        <Button variant="info text-light" className="mb-4" type="submit">
-          Send
-        </Button>
+        <div className="text-end">
+          <Button variant="info text-light " className="mb-4" type="submit">
+            <i className="bi bi-send"></i>
+          </Button>
+        </div>
       </Form>
     );
   }

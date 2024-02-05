@@ -5,10 +5,16 @@ import { Component } from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
+import CommentArea from "./CommentArea";
 
 class BookList extends Component {
   state = {
     searchValue: "",
+    selected: null,
+  };
+
+  handleSelected = (newVal) => {
+    this.setState({ selected: newVal });
   };
 
   render() {
@@ -37,23 +43,34 @@ class BookList extends Component {
             </Col>
           </Row>
           <h1 className="ms-2">{this.props.partTittle}</h1>
-
-          <Row className="justify-content-center mt-3 g-3 mx-3 mx-md-0 ">
-            {filteredBooks.length === 0 ? (
-              <Col xs={12}>
-                <ListGroup>
-                  <ListGroup.Item className="bg-dark text-danger">
-                    Book not found &#40;˚ ˃̣̣̥⌓˂̣̣̥ &#41;
-                  </ListGroup.Item>
-                </ListGroup>
-              </Col>
-            ) : (
-              filteredBooks.map((book) => (
-                <Col xs={12} md={6} lg={4} xl={3} key={book.asin}>
-                  <SingleBook dataBooks={book} />
-                </Col>
-              ))
-            )}
+          <Row>
+            <Col>
+              <Row className="justify-content-center mt-3 gy-3 mx-3 mx-md-0 listBooks">
+                {filteredBooks.length === 0 ? (
+                  <Col>
+                    <ListGroup>
+                      <ListGroup.Item className="bg-dark text-danger">
+                        Book not found &#40;˚ ˃̣̣̥⌓˂̣̣̥ &#41;
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Col>
+                ) : (
+                  filteredBooks.map((book) => (
+                    <Col xs={6} key={book.asin}>
+                      <SingleBook
+                        dataBooks={book}
+                        handleSelected={this.handleSelected}
+                      />
+                    </Col>
+                  ))
+                )}
+              </Row>
+            </Col>
+            <Col>
+              {this.state.selected && (
+                <CommentArea bookId={this.state.selected.asin} />
+              )}
+            </Col>
           </Row>
         </Container>
       </>
