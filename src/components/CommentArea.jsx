@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -6,21 +6,15 @@ import { Col } from "react-bootstrap";
 import AddComment from "./AddComment";
 import CommentsList from "./CommentsList";
 
-class CommentArea extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      comments: [],
-    };
-  }
+const CommentArea = ({ bookId }) => {
+  const [comments, setComments] = useState([]);
 
-  componentDidMount() {
-    this.fetchComments();
-  }
+  useEffect(() => {
+    fetchComments();
+  }, [bookId]);
 
-  fetchComments = () => {
+  const fetchComments = () => {
     const myUrl = "https://striveschool-api.herokuapp.com/api/comments/";
-    const { bookId } = this.props;
     console.log(bookId);
     fetch(myUrl + "/" + bookId, {
       headers: {
@@ -36,7 +30,7 @@ class CommentArea extends Component {
         }
       })
       .then((data) => {
-        this.setState({ comments: data });
+        setComments(data);
         console.log(data);
       })
       .catch((error) => {
@@ -44,27 +38,19 @@ class CommentArea extends Component {
       });
   };
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.bookId !== this.props.bookId) {
-      this.fetchComments();
-    }
-  }
-
-  render() {
-    return (
-      <Container className="z-2">
-        <Row>
-          <Col>
-            <h5 className="text-end">Comments</h5>
-            <ListGroup>
-              <CommentsList comments={this.state.comments} />
-              <AddComment bookId={this.props.bookId} />
-            </ListGroup>
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
-}
+  return (
+    <Container className="z-2">
+      <Row>
+        <Col>
+          <h5 className="text-end">Comments</h5>
+          <ListGroup>
+            <CommentsList comments={comments} />
+            <AddComment bookId={bookId} />
+          </ListGroup>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
 
 export default CommentArea;
