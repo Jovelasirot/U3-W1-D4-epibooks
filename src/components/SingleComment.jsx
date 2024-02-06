@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Col, Row } from "react-bootstrap";
+import Stars from "./Stars";
 
 const SingleComment = ({ comment, onCommentAdded }) => {
   const handleDelete = () => {
@@ -30,7 +31,7 @@ const SingleComment = ({ comment, onCommentAdded }) => {
     <Col xs={12}>
       <Row className="glass text-light">
         <Col xs={8} className="p-2 ">
-          <p>{comment.rate} stars</p>
+          <Stars Stars={comment.rate} />
           <p>{comment.comment}</p>
           <span className="commentAuthor">By - {comment.author}</span>
         </Col>
