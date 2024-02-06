@@ -38,6 +38,7 @@ const CommentArea = ({ bookId }) => {
         console.error("Error fetching comments:", error);
       });
   };
+
   const handleCommentAdded = () => {
     fetchComments();
   };

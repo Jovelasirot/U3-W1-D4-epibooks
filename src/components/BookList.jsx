@@ -9,10 +9,10 @@ import CommentArea from "./CommentArea";
 
 const BookList = ({ partTittle, allFantasy }) => {
   const [searchValue, setSearchValue] = useState("");
-  const [selected, setSelected] = useState(null);
+  const [selectedBookId, setSelectedBookId] = useState(null);
 
   const handleSelected = (newVal) => {
-    setSelected(newVal);
+    setSelectedBookId(newVal === selectedBookId ? null : newVal);
   };
 
   const filteredBooks = allFantasy.filter((book) =>
@@ -54,6 +54,8 @@ const BookList = ({ partTittle, allFantasy }) => {
                   <Col xs={6} key={book.asin}>
                     <SingleBook
                       dataBooks={book}
+                      bookId={book.asin}
+                      isSelected={selectedBookId === book.asin}
                       handleSelected={handleSelected}
                     />
                   </Col>
@@ -61,7 +63,7 @@ const BookList = ({ partTittle, allFantasy }) => {
               )}
             </Row>
           </Col>
-          <Col>{selected && <CommentArea bookId={selected.asin} />}</Col>
+          <Col>{selectedBookId && <CommentArea bookId={selectedBookId} />}</Col>
         </Row>
       </Container>
     </>
