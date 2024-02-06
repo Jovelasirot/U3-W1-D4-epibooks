@@ -11,6 +11,7 @@ const CommentArea = ({ bookId }) => {
 
   useEffect(() => {
     fetchComments();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bookId]);
 
   const fetchComments = () => {
@@ -37,6 +38,9 @@ const CommentArea = ({ bookId }) => {
         console.error("Error fetching comments:", error);
       });
   };
+  const handleCommentAdded = () => {
+    fetchComments();
+  };
 
   return (
     <Container className="z-2">
@@ -44,8 +48,11 @@ const CommentArea = ({ bookId }) => {
         <Col>
           <h5 className="text-end">Comments</h5>
           <ListGroup>
-            <CommentsList comments={comments} />
-            <AddComment bookId={bookId} />
+            <CommentsList
+              comments={comments}
+              onCommentAdded={handleCommentAdded}
+            />
+            <AddComment bookId={bookId} onCommentAdded={handleCommentAdded} />
           </ListGroup>
         </Col>
       </Row>

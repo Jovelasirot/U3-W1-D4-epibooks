@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-const SingleComment = ({ comment }) => {
+const SingleComment = ({ comment, onCommentAdded }) => {
   const handleDelete = () => {
     fetch(
       "https://striveschool-api.herokuapp.com/api/comments/" + comment._id,
@@ -16,7 +16,8 @@ const SingleComment = ({ comment }) => {
     )
       .then((response) => {
         if (response.ok) {
-          return alert("Comment deleted");
+          alert("Comment deleted");
+          onCommentAdded();
         } else throw new Error();
       })
       .catch((err) => {
