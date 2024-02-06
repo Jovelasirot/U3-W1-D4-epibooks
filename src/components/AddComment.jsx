@@ -36,7 +36,8 @@ const AddComment = ({ bookId, onCommentAdded }) => {
   };
 
   return (
-    <Form className="mt-4" onSubmit={handleComment}>
+    <Form className="mt-4 " onSubmit={handleComment}>
+      <h5 className="text-end">Leave us your thoughts</h5>
       <Form.Group className="mb-3">
         <Form.Label>Rate this book</Form.Label>
         <Form.Select
@@ -70,7 +71,11 @@ const AddComment = ({ bookId, onCommentAdded }) => {
         />
       </Form.Group>
       <div className="text-end">
-        <Button variant="info text-light " className="mb-4" type="submit">
+        <Button
+          variant={newComment.comment ? "danger" : "secondary"}
+          className="mb-4 text-light"
+          type="submit"
+        >
           <i className="bi bi-send"></i>
         </Button>
       </div>

@@ -79,7 +79,7 @@ const CommentArea = ({ bookId }) => {
           ) : (
             <>
               <Container>
-                <Row className="listComments ">
+                <Row className="listComments  border-bottom border-light-subtle">
                   <Col>
                     <CommentsList
                       comments={comments}
