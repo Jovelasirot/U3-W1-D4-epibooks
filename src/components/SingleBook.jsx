@@ -7,7 +7,7 @@ const SingleBook = ({ dataBooks, handleSelected, bookId, isSelected }) => {
 
   return (
     <>
-      <Card className={isSelected ? "border border-warning" : ""}>
+      <Card className={isSelected ? "border border-warning " : "shadow"}>
         <Card.Img
           variant="top"
           src={dataBooks.img}

@@ -7,8 +7,7 @@ import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
 import CommentArea from "./CommentArea";
 
-const BookList = ({ partTittle, allFantasy }) => {
-  const [searchValue, setSearchValue] = useState("");
+const BookList = ({ partTittle, allFantasy, searchQuery }) => {
   const [selectedBookId, setSelectedBookId] = useState(null);
 
   const handleSelected = (newVal) => {
@@ -16,27 +15,13 @@ const BookList = ({ partTittle, allFantasy }) => {
   };
 
   const filteredBooks = allFantasy.filter((book) =>
-    book.title.toLowerCase().includes(searchValue.toLowerCase().trim())
+    book.title.toLowerCase().includes(searchQuery.toLowerCase().trim())
   );
 
   return (
     <>
       <Container className="pt-4 ">
-        <Row className="justify-content-end">
-          <Col xs="auto">
-            <Form>
-              <Form.Control
-                className="bg-dark text-light border border-light  placeHolder"
-                type="text"
-                placeholder="Find a book"
-                value={searchValue}
-                onChange={(e) => {
-                  setSearchValue(e.target.value);
-                }}
-              />
-            </Form>
-          </Col>
-        </Row>
+        <Row className="justify-content-end"></Row>
         <h1 className="ms-2">{partTittle}</h1>
         <Row>
           <Col>

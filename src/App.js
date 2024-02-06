@@ -5,19 +5,27 @@ import MyFooter from "./components/MyFooter";
 import Welcome from "./components/Welcome";
 import fantasyData from "./data/fantasy.json";
 import BookList from "./components/BookList";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
     <>
       <div className="App-header">
         <header>
-          <CustomNavbar />
+          <CustomNavbar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
         </header>
         <main>
           <Welcome />
           <BookList
             allFantasy={fantasyData}
             partTittle={fantasyData[0].category.toUpperCase()}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
           />
         </main>
       </div>
@@ -27,6 +35,6 @@ function App() {
       </footer>
     </>
   );
-}
+};
 
 export default App;
