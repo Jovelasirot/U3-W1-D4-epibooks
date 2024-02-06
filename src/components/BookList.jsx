@@ -35,7 +35,7 @@ const BookList = ({ partTittle, allFantasy, searchQuery }) => {
                 </Col>
               ) : (
                 filteredBooks.map((book) => (
-                  <Col xs={6} key={book.asin}>
+                  <Col xs={12} md={6} lg={6} key={book.asin}>
                     <SingleBook
                       dataBooks={book}
                       bookId={book.asin}
@@ -47,7 +47,9 @@ const BookList = ({ partTittle, allFantasy, searchQuery }) => {
               )}
             </Row>
           </Col>
-          <Col>{selectedBookId && <CommentArea bookId={selectedBookId} />}</Col>
+          <Col xs={12} lg={6}>
+            {selectedBookId && <CommentArea bookId={selectedBookId} />}
+          </Col>
         </Row>
       </Container>
     </>

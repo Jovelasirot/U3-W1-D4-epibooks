@@ -50,7 +50,7 @@ const CommentArea = ({ bookId }) => {
     <Container>
       <Row>
         <Col>
-          <h5 className="text-end">Comments</h5>
+          <h5 className="text-end">Reviews</h5>
           {loading ? (
             <Row className="d-flex flex-column gy-4">
               <Col>
@@ -76,6 +76,11 @@ const CommentArea = ({ bookId }) => {
                 </Placeholder>
               </Col>
             </Row>
+          ) : comments.length === 0 ? (
+            <Col>
+              <p>No reviews about this book ༼ ༎ຶ ᆺ ༎ຶ༽</p>
+              <AddComment bookId={bookId} onCommentAdded={handleCommentAdded} />
+            </Col>
           ) : (
             <>
               <Container>

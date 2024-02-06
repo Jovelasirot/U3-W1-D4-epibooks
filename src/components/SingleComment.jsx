@@ -30,9 +30,16 @@ const SingleComment = ({ comment, onCommentAdded }) => {
   return (
     <Col xs={12}>
       <Row className="glass text-light">
-        <Col xs={8} className="p-2 ">
-          <Stars Stars={comment.rate} />
-          <p>{comment.comment}</p>
+        <Col xs={10} className="p-2 ">
+          <div className="d-flex justify-content-between align-items-center">
+            <Stars Stars={comment.rate} />
+            <p>
+              {comment.createdAt.split("T")[0]} - at{" "}
+              {comment.createdAt.slice(11, 16)}
+            </p>
+          </div>
+
+          <p>"{comment.comment}"</p>
           <span className="commentAuthor">By - {comment.author}</span>
         </Col>
         <Col className="d-flex justify-content-end align-items-center">
