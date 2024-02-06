@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { Col, Row } from "react-bootstrap";
 
 const SingleComment = ({ comment, onCommentAdded }) => {
   const handleDelete = () => {
@@ -26,15 +27,20 @@ const SingleComment = ({ comment, onCommentAdded }) => {
   };
 
   return (
-    <div className="bg-warning d-flex justify-content-between border border-1 border-dark">
-      <div>{comment.comment}</div>
-      <div className="d-flex">
-        <div>{comment.rate} stars</div>
-        <Button variant="danger" className="btn-sm ms-2" onClick={handleDelete}>
-          <i className="bi bi-trash-fill"></i>
-        </Button>
-      </div>
-    </div>
+    <Col xs={12}>
+      <Row className="glass text-light">
+        <Col xs={8} className="p-2 ">
+          <p>{comment.rate} stars</p>
+          <p>{comment.comment}</p>
+          <span className="commentAuthor">By - {comment.author}</span>
+        </Col>
+        <Col className="d-flex justify-content-end align-items-center">
+          <Button variant="info" className="btn" onClick={handleDelete}>
+            <i className="bi bi-trash-fill text-light"></i>
+          </Button>
+        </Col>
+      </Row>
+    </Col>
   );
 };
 

@@ -1,5 +1,4 @@
 import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
 import SingleBook from "./SingleBook";
 import { useState } from "react";
 import Row from "react-bootstrap/Row";
@@ -29,7 +28,7 @@ const BookList = ({ partTittle, allFantasy, searchQuery }) => {
               {filteredBooks.length === 0 ? (
                 <Col>
                   <ListGroup>
-                    <ListGroup.Item className="bg-dark text-danger">
+                    <ListGroup.Item className="bg-light bg-opacity-10 text-center text-dark">
                       Book not found &#40;˚ ˃̣̣̥⌓˂̣̣̥ &#41;
                     </ListGroup.Item>
                   </ListGroup>

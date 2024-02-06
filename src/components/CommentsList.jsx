@@ -1,9 +1,10 @@
 import React from "react";
 import SingleComment from "./SingleComment";
+import { Row } from "react-bootstrap";
 
 const CommentsList = ({ comments, onCommentAdded }) => {
   return (
-    <div>
+    <Row className="g-2">
       {comments.map((comment) => (
         <SingleComment
           key={comment._id}
@@ -11,7 +12,7 @@ const CommentsList = ({ comments, onCommentAdded }) => {
           onCommentAdded={onCommentAdded}
         />
       ))}
-    </div>
+    </Row>
   );
 };
 

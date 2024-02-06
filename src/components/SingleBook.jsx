@@ -7,13 +7,19 @@ const SingleBook = ({ dataBooks, handleSelected, bookId, isSelected }) => {
 
   return (
     <>
-      <Card className={isSelected ? "border border-warning " : "shadow"}>
+      <Card
+        className={
+          isSelected
+            ? "border  border-warning bg-light bg-opacity-10"
+            : "shadow bg-light bg-opacity-10 "
+        }
+      >
         <Card.Img
           variant="top"
           src={dataBooks.img}
           style={{ height: "400px" }}
         />
-        <Card.Body className="d-flex flex-column justify-content-between">
+        <Card.Body className="d-flex flex-column justify-content-between text-light ">
           <Card.Title className="flex-grow-1  fw-semibold">
             {dataBooks.title}
           </Card.Title>
@@ -29,7 +35,7 @@ const SingleBook = ({ dataBooks, handleSelected, bookId, isSelected }) => {
             >
               {isSelected ? "Hide Reviews" : "Show Reviews"}
             </Button>
-            <Button variant="secondary">Buy Now</Button>
+            <Button variant="danger">Buy Now</Button>
           </div>
         </Card.Body>
       </Card>
