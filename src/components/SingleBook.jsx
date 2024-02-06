@@ -10,8 +10,8 @@ const SingleBook = ({ dataBooks, handleSelected, bookId, isSelected }) => {
       <Card
         className={
           isSelected
-            ? "border  border-warning bg-light bg-opacity-10"
-            : "shadow bg-light bg-opacity-10 "
+            ? "border  border-warning bg-light bg-opacity-10 h-100"
+            : "shadow bg-light bg-opacity-10 h-100"
         }
       >
         <Card.Img
