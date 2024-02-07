@@ -18,5 +18,12 @@ $info: #FF2750;
     color: #00D9D9;
   }
 
+  .anima {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss"

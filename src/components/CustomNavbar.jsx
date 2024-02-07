@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
+import { Link, useLocation } from "react-router-dom";
 
 const CustomNavbar = ({ searchQuery, setSearchQuery }) => {
   const handleSearchInputChange = (e) => {
@@ -11,10 +12,20 @@ const CustomNavbar = ({ searchQuery, setSearchQuery }) => {
   const handleSearchSumbit = (e) => {
     e.preventDefault();
   };
+
+  const location = useLocation();
+
   return (
     <Navbar expand="md" bg="dark" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="#">Epibooks</Navbar.Brand>
+        <Navbar.Brand>
+          <Link
+            className={`nav-link${location.pathname === "/" ? " active" : ""}`}
+            to={"/"}
+          >
+            EpiBooks
+          </Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -22,9 +33,30 @@ const CustomNavbar = ({ searchQuery, setSearchQuery }) => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">About</Nav.Link>
-            <Nav.Link href="#action2">Browse</Nav.Link>
+            <Link
+              className={`nav-link${
+                location.pathname === "/" ? " active" : ""
+              }`}
+              to={"/"}
+            >
+              Home
+            </Link>
+            <Link
+              className={
+                location.pathname === "/about" ? "nav-link active" : "nav-link"
+              }
+              to="/about"
+            >
+              About
+            </Link>
+            <Link
+              className={
+                location.pathname === "/Browse" ? "nav-link active" : "nav-link"
+              }
+              to="/Browse"
+            >
+              Browse
+            </Link>
           </Nav>
           <Form className="d-flex" onSubmit={handleSearchSumbit}>
             <Form.Control

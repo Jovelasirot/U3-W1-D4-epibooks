@@ -15,6 +15,13 @@
   color: #00D9D9;
 }
 
+.anima {
+  transition: transform 0.3s ease;
+}
+.anima:hover {
+  transform: scale(1.05);
+}
+
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors

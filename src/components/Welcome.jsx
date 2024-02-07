@@ -10,27 +10,34 @@ const Welcome = () => {
 
   return (
     <>
-      {showModal && (
+      {showModal ? (
         <div
-          className="modal"
-          style={{ display: "block", position: "initial" }}
+          className="modal show"
+          style={{ display: "flex", position: "initial" }}
         >
-          <Modal.Dialog>
+          <Modal.Dialog className="w-100">
             <Modal.Header closeButton onHide={handleCloseModal}>
               <Modal.Title>Welcome to EpiBooks</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
               <p>The best library on the web.</p>
+              <p>You can find your favorite book here no cap.</p>
             </Modal.Body>
 
             <Modal.Footer>
-              <Button variant="primary" onClick={handleCloseModal}>
+              <Button
+                variant="warning"
+                className="text-light"
+                onClick={handleCloseModal}
+              >
                 Let's start
               </Button>
             </Modal.Footer>
           </Modal.Dialog>
         </div>
+      ) : (
+        <h2 className="text-center mb-4 ">Go to your favorite book Genre</h2>
       )}
     </>
   );

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import ListGroup from "react-bootstrap/ListGroup";
-import { Col, Placeholder, Spinner } from "react-bootstrap";
+import { Col, Placeholder } from "react-bootstrap";
 import AddComment from "./AddComment";
 import CommentsList from "./CommentsList";
 
@@ -93,7 +92,6 @@ const CommentArea = ({ bookId }) => {
                   </Col>
                 </Row>
                 <Col>
-                  {" "}
                   <AddComment
                     bookId={bookId}
                     onCommentAdded={handleCommentAdded}

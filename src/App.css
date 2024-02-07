@@ -14,9 +14,6 @@
 }
 
 .App-header {
-  background: rgb(0, 217, 217);
-  background: linear-gradient(0deg, #00d9d9 0%, #ff2750 100%);
-  min-height: 100vh;
   padding-bottom: 20px;
 }
 
@@ -72,4 +69,9 @@
     background: rgba(255, 39, 80, 0.1);
     border-radius: 20px;
   }
+}
+
+main {
+  background: rgb(0, 217, 217);
+  background: linear-gradient(0deg, #00d9d9 0%, #ff2750 100%);
 }
