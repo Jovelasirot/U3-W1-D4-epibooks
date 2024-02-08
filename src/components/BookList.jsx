@@ -9,8 +9,8 @@ import CommentArea from "./CommentArea";
 const BookList = ({ partTittle, allFantasy, searchQuery }) => {
   const [selectedBookId, setSelectedBookId] = useState(null);
 
-  const handleSelected = (newVal) => {
-    setSelectedBookId(newVal === selectedBookId ? null : newVal);
+  const handleSelected = (bookId) => {
+    setSelectedBookId(bookId === selectedBookId ? null : bookId);
   };
 
   const filteredBooks = allFantasy.filter((book) =>

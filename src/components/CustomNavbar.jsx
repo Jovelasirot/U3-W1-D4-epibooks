@@ -16,7 +16,7 @@ const CustomNavbar = ({ searchQuery, setSearchQuery }) => {
   const location = useLocation();
 
   return (
-    <Navbar expand="md" bg="dark" data-bs-theme="dark">
+    <Navbar expand="md" bg="dark" data-bs-theme="dark" role="NavBar">
       <Container fluid>
         <Navbar.Brand>
           <Link

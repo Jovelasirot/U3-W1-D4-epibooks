@@ -13,11 +13,13 @@ const SingleBook = ({ dataBooks, handleSelected, bookId, isSelected }) => {
             ? "border  border-warning bg-light bg-opacity-10 h-100"
             : "shadow bg-light bg-opacity-10 h-100"
         }
+        role="bookCard"
       >
         <Card.Img
           variant="top"
           src={dataBooks.img}
           style={{ height: "400px" }}
+          alt={dataBooks.title + " book cover"}
         />
         <Card.Body className="d-flex flex-column justify-content-between text-light ">
           <Card.Title className="flex-grow-1  fw-semibold">
