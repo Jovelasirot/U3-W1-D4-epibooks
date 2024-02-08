@@ -13,7 +13,7 @@ const SingleBook = ({ dataBooks, handleSelected, bookId, isSelected }) => {
             ? "border  border-warning bg-light bg-opacity-10 h-100"
             : "shadow bg-light bg-opacity-10 h-100"
         }
-        role="bookCard"
+        data-testid="card"
       >
         <Card.Img
           variant="top"
