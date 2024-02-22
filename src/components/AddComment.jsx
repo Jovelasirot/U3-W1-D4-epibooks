@@ -14,7 +14,7 @@ const AddComment = ({ bookId, onCommentAdded }) => {
     fetch("https://striveschool-api.herokuapp.com/api/comments/", {
       headers: {
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWMwZTg5ZGUwODVmYTAwMTk2MzFhNWYiLCJpYXQiOjE3MDcxNDM0MjYsImV4cCI6MTcwODM1MzAyNn0.Jw7gWP0H0XxT73-fwPubkwbjBtXiJhtxpPYJKbmEydM",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MTY4NDc2YTY0YjAwMTllZjE5ZDciLCJpYXQiOjE3MDg1OTQ4MjAsImV4cCI6MTcwOTgwNDQyMH0.dP8PfQiDUXJctVJmUd7eu4dnGxlD0O2fJvry3_qLXO4",
         "content-type": "application/json",
       },
       method: "POST",
